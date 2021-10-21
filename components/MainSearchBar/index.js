@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import propTypes from 'prop-types';
-
+import { useRouter } from "next/router";
 /**
  * 
  * @param {string} placeholder - A string that will be used as the placeholder on the
@@ -13,7 +13,7 @@ import propTypes from 'prop-types';
 
 
 const MainSearchBar = ({placeholder, onSearch}) => {
-
+    const router = useRouter();
 	const {
 		register,
 		handleSubmit
@@ -21,6 +21,7 @@ const MainSearchBar = ({placeholder, onSearch}) => {
 
 	const onSubmit = async (data) =>{
             const {search} = data;
+            router.push("/query/"+search);
 	};
 
 	return (

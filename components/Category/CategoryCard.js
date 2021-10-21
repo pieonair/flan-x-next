@@ -18,14 +18,14 @@ import Link from 'next/link';
 const CategoryCard = ({picture, name}) => {
     //TODO add freelancers on top
     return(
-        <Link href={`/category/${name}`}>
-            <div>
-                <Image src={picture} alt={`A picture that represents the ${name} category`} />
+        <div>
+                <Link href={`/category/${name}`}>
+                {/* <Image src={picture} alt={`A picture that represents the ${name} category`} height={500} width={500} /> */}
                 <div>    
                     {name} 
                 </div>
-            </div>
-        </Link>
+                </Link>
+        </div>
     );
 };
 

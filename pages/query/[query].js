@@ -3,28 +3,28 @@ import axios from "axios";
 export async function getStaticPaths() {
    const paths = [
     { params: {
-        category: "Business"
+        query: "Business"
         
         }
     },
     { params: {
-        category: "Graphic Design"
+        query: "Graphic Design"
         
     }},
     { params: {
-        category: "Digital Marketing"
+        query: "Digital Marketing"
         
     }},   
     { params: {
-        category: "Writing and Translation"
+        query: "Writing and Translation"
         
     }},
     { params: {
-        category: "Video & Animation"
+        query: "Video & Animation"
         
     }},
     { params: {
-        category: "Music & Audio"
+        query: "Music & Audio"
         
     }},
     ];
@@ -33,8 +33,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const {category} = params;
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL+"/category/"+category;
+    const {query} = params;
+    const url = process.env.NEXT_PUBLIC_BACKEND_URL+"/query/"+query;
     const response = await axios.get(url);
     //TODO add error checking here
     const results = await response.data;
@@ -68,9 +68,4 @@ const Page = ({rawResults}) => {
     ) 
 }
 
-
-
-
 export default Page;
-
-
