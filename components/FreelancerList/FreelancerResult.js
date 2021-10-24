@@ -1,10 +1,11 @@
 import propTypes from 'prop-types';
+import Image from 'next/image';
 
 const FreelancerResult = ({freelancer}) => {
     return(
         <div>
             <div className="FR-left">
-                <img src={freelancer.personalInfo.profilePicture}/>
+                <Image alt="Freelancer profile picture" src={freelancer.personalInfo.profilePicture}/>
                 <div>
                     {freelancer.personalInfo.location}
                 </div>
