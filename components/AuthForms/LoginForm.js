@@ -1,5 +1,4 @@
 import {useForm} from "react-hook-form";
-import propTypes from 'prop-types';
 import axios from "axios";
 
 
@@ -9,10 +8,11 @@ const LoginForm = () => {
         handleSubmit
     } = useForm();
     const onSubmit = async (data) => {
-        let jwt;
         try{
             const {user, password} = data;
-            jwt = await axios.post(process.env.NEXT_PUBLIC_BACKEND_URL+ "/login", {username:user, password:password});
+            let response = await axios.post(process.env.NEXT_PUBLIC_BACKEND_URL+ "/login", {username:user, password:password});
+            const jwt = response.data.token;
+            sessionStorage.setItem('tok', jwt);
         }
         catch(err){
             //implement better error handling
