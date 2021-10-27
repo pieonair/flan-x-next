@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 const LoginForm = () => {
   const {
@@ -9,23 +10,27 @@ const LoginForm = () => {
     formState: { errors },
     clearErrors,
   } = useForm();
+
+  const router = useRouter()
   const onSubmit = async (data) => {
     try {
+    //clear any errors previously shown
       clearErrors();
-      const { name, username, email, password, confirmPassword } = data;
-      const all = name && username && email && password && confirmPassword;
-      if (!confirmPassword) throw { type: "confirmPassword", message:"required"};
-      if (password !== confirmPassword)
-        throw { type: "confirmPassword", message: "Passwords must match" };
+    //get all the params the user should have inputted into variables
+    const { name, username, email, password, confirmPassword } = data;
+    //send the data to the backend
       let response = await axios.post(
         process.env.NEXT_PUBLIC_BACKEND_URL + "/signup",
-        { username: username, password: password, name: name, email:email}
+        { username: username, password: password, name: name, email:email, confirmPassword:confirmPassword}
       );
       const jwt = response.data.token;
+      //store jwt in sessionStorage
       sessionStorage.setItem("tok", jwt);
+      //redirect to success page
+      router.push("/success");
     } catch (err) {
-      if (err.response) {
         const { message, type } = err.response.data;
+        //if there are multiple errors handle here
         if (typeof type == typeof []) {
           for (let i of type) {
             console.log(i);
@@ -38,23 +43,16 @@ const LoginForm = () => {
               { shouldFocus: true }
             );
           }
+          //if there is a single error
         } else
-          setError(
+        setError(
             type,
             {
-              type: "manual",
-              message: message,
+                type: "manual",
+                message: message,
             },
             { shouldFocus: true }
-          );
-      } else {
-        const { message, type } = err;
-        setError(
-          type,
-          { type: "manual", message: message },
-          { shouldFocus: true }
-        );
-      }
+            );
     }
   };
 
