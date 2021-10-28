@@ -1,10 +1,11 @@
-import LoginForm from "../components/AuthForms/LoginForm";
-import Header from "../components/Header";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import RegisterForm from "../components/AuthForms/RegisterForm";
+import Header from "../components/Header";
 
 
-const login = ()=>{
+
+const register = ()=>{
     const router = useRouter()
     useEffect(()=>{
         if (sessionStorage.getItem('tok')!==null)
@@ -13,9 +14,9 @@ const login = ()=>{
     return(
         <div>
             <Header/>
-            <LoginForm ></LoginForm>
+            <RegisterForm ></RegisterForm>
         </div>
     )
 }
 
-export default login;
+export default register;

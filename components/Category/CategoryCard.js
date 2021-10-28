@@ -8,8 +8,6 @@ import Link from 'next/link';
  * 
  * @param {string} name - The name of the catagory
  * 
- * @param {function} onSearch - The function that's called when the
- * card is clicked.
  * 
  * @returns A card for the category to showcase on the Landing page 
  */
@@ -32,7 +30,6 @@ const CategoryCard = ({picture, name}) => {
 CategoryCard.propTypes = {
     picture: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
-    onSearch: propTypes.func.isRequired
 };
 
 
