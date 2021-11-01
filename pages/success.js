@@ -1,7 +1,7 @@
 const success = () => {
     return (
         <div>
-            registration succesfull please check your email
+            Registration succesfull please check your email for the verification code.
         </div>
     )
 }

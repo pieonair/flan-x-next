@@ -27,7 +27,8 @@ const LoginForm = () => {
       //store jwt in sessionStorage
       sessionStorage.setItem("tok", jwt);
       //redirect to success page
-      router.push("/success");
+      router.push("/verify");
+
     } catch (err) {
         const { message, type } = err.response.data;
         //if there are multiple errors handle here
