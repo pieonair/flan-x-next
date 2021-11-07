@@ -35,15 +35,25 @@ const EditProfile = () => {
         formState: {errors},
         clearErrors
     } = useForm();
+    const router = useRouter()
+    useEffect(() => {
+        () =>{
+            if (!sessionStorage.getItem('tok'))
+                router.replace('/');
+            //send request to get current details
 
-    const onSubmit = async (data) => {
+        }    }, []);
+
+        const onSubmit = async (data) => {
         try{
             clearErrors();
             const {username, name,  email, type, about, personalInfo, freelancerSites, skills, services, career, savedList, private, mailing} = data;
+            const tok = sessionStorage.getItem('tok');
+            //^ add this to the axios auth header
             let response = await axios.post(process.env.NEXT_PUBLIC_BACKEND_URL+ "/edit", 
             {username:username, name:name, email:email, type:type, about:about, personalInfo:personalInfo, freelancerSites:freelancerSites, skills:skills, services:services, career:career, savedList:savedList, private:private, mailing:mailing});
-            const jwt = response.data.token;
-            sessionStorage.setItem('tok', jwt);
+
+
         }
         catch(err){
             console.log(err);
@@ -69,8 +79,4 @@ const EditProfile = () => {
           </form>
         </div>
       );
-    // const mappingFunction = (item) => {
-    //     if (typeof item === typeof {}){
-    //     }
-    // }
 }
