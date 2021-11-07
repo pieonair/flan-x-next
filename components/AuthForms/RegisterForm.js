@@ -32,29 +32,28 @@ const LoginForm = () => {
 
     } catch (err) {
         const { message, type } = err.response.data;
-        //if there are multiple errors handle here
-    //     if (typeof type == typeof []) {
-    //       for (let i of type) {
-    //         console.log(i);
-    //         setError(
-    //           i,
-    //           {
-    //             type: "manual",
-    //             message: message,
-    //           },
-    //           { shouldFocus: true }
-    //         );
-    //       }
-    //       //if there is a single error
-    //     } else
-    //     setError(
-    //         type,
-    //         {
-    //             type: "manual",
-    //             message: message,
-    //         },
-    //         { shouldFocus: true }
-    //         );
+        // if there are multiple errors handle here
+        if (typeof type == typeof []) {
+          for (let i of type) {
+            setError(
+              i,
+              {
+                type: "manual",
+                message: message,
+              },
+              { shouldFocus: true }
+            );
+          }
+          //if there is a single error
+        } else
+        setError(
+            type,
+            {
+                type: "manual",
+                message: message,
+            },
+            { shouldFocus: true }
+            );
     }
   };
 
@@ -72,9 +71,9 @@ const LoginForm = () => {
         <input type="password" {...register("confirmPassword", {required: true})} />
         {errors.confirmPassword && errors.confirmPassword.message}
         <input {...register("type", {required: true})}  type="radio" value="freelancer" />
-        <label for="freelancer">I am a freelancer</label>
+        <label htmlFor="freelancer">I am a freelancer</label>
         <input {...register("type", {required: true})}  type="radio" value="client" />
-        <label for="client">I am a client</label>
+        <label htmlFor="client">I am a client</label>
 
         <input type="submit" value="register" />
       </form>

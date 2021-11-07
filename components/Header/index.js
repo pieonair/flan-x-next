@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import MainSearchBar from '../MainSearchBar';
 import { useEffect, useState} from 'react';
 
 /**
@@ -36,7 +37,7 @@ const Header = () => {
             <a><Image id="logo" alt="Flan logo" src="/favicon.ico" width="50" height="50"></Image></a>
         </Link>
         <form>
-            <input type="text" id="main-searchbar"></input>
+            <MainSearchBar/>
         </form>
         
         {acc} 

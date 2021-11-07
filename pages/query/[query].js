@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import FreelancerList from "../../components/FreelancerList";
 export async function getStaticPaths() {
    const paths = [
     { params: {
@@ -32,6 +32,8 @@ export async function getStaticPaths() {
     return {paths, fallback: true};
 }
 
+
+
 export async function getStaticProps({ params }) {
     const {query} = params;
     const url = process.env.NEXT_PUBLIC_BACKEND_URL+"/query/"+query;
@@ -50,15 +52,9 @@ export async function getStaticProps({ params }) {
 
 const Page = ({rawResults}) => {
     if (!rawResults)
-        return <div>naw</div>
+        return <div>Loading...</div>
 
-    const results = rawResults.map(
-        (result) => 
-            <div key={result.username}>
-                {result.username}
-                {result.languages}
-            </div>
-    )
+    const results = <FreelancerList freelancers = {rawResults}/>
 
 
     return(

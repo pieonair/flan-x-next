@@ -1,6 +1,10 @@
 const edit = ()=>{
-    const 
-    return(null)
+     
+    return(
+        <div>
+            Hallo
+        </div>
+    )
 }
 
 export default edit;
