@@ -2,7 +2,7 @@ import FreelancerResult from "./FreelancerResult";
 import propTypes from 'prop-types';
 
 const FreelancerList = ({freelancers}) => {
-    list = freelancers.map(
+    const list = freelancers.map(
         (user) => {
             return <FreelancerResult key={user.username} freelancer={user}/>;
         }

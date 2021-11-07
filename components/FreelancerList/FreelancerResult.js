@@ -5,7 +5,7 @@ const FreelancerResult = ({freelancer}) => {
     return(
         <div>
             <div className="FR-left">
-                <Image alt="Freelancer profile picture" src={freelancer.personalInfo.profilePicture}/>
+                {/* <Image alt="Freelancer profile picture" src={freelancer.personalInfo.profilePicture}/> */}
                 <div>
                     {freelancer.personalInfo.location}
                 </div>

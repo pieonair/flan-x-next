@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useRouter } from "next/router"
 import { useEffect } from "react";
+import Header from "../../components/Header";
+import VerifyForm from "../../components/VerifyForm";
 
 const verifyFromCode = () => {
     const router = useRouter();
     const {verificationCode} = router.query;
-    useEffect(()=>{
+    useEffect(()=>{async () =>{
         if (sessionStorage.getItem('tok')!==null){
             router.replace("/");
             return;
@@ -19,8 +21,18 @@ const verifyFromCode = () => {
         catch(err){
             //TODO better error handling
             console.log(error);
+            
         }
-    });
+    }});
+
+
+    return(
+        <div>
+            <Header/>
+            <VerifyForm/>
+        </div>
+    )
+
 }
 
 export default verifyFromCode;
