@@ -9,7 +9,7 @@ const fields = {
     type: { type: String },
     about: { type: String },
     personalInfo: {
-        profilePicture: { type: String },
+        profilePicture: { type: Stringh },
         professionalTitle: { type: String },
         categories: { type: Array },
         country: { type: String },
@@ -27,7 +27,7 @@ const fields = {
     mailing: { type: Boolean },
 }
 
-const EditProfile = () => {
+const EditProfileForm = () => {
     const {
         register,
         handleSubmit,
@@ -48,12 +48,10 @@ const EditProfile = () => {
         try{
             clearErrors();
             const {username, name,  email, type, about, personalInfo, freelancerSites, skills, services, career, savedList, private, mailing} = data;
-            const tok = sessionStorage.getItem('tok');
-            //^ add this to the axios auth header
+            const tok = sessionStorage.getItem('tok'); // add this to the axios auth header
             let response = await axios.post(process.env.NEXT_PUBLIC_BACKEND_URL+ "/edit", 
-            {username:username, name:name, email:email, type:type, about:about, personalInfo:personalInfo, freelancerSites:freelancerSites, skills:skills, services:services, career:career, savedList:savedList, private:private, mailing:mailing});
-
-
+            {tok:tok, username:username, name:name, email:email, type:type, about:about, personalInfo:personalInfo, freelancerSites:freelancerSites, skills:skills, services:services, career:career, savedList:savedList, private:private, mailing:mailing},
+            {headers: {'Authorization': tok}});
         }
         catch(err){
             console.log(err);
@@ -80,3 +78,5 @@ const EditProfile = () => {
         </div>
       );
 }
+
+export default EditProfileForm;
