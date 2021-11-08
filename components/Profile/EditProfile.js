@@ -48,7 +48,7 @@ const EditProfileForm = () => {
         try{
             clearErrors();
             const {username, name,  email, type, about, personalInfo, freelancerSites, skills, services, career, savedList, private, mailing} = data;
-            const tok = sessionStorage.getItem('tok'); // add this to the axios auth header
+            const tok = sessionStorage.getItem('tok'); // add this to the axios header
             let response = await axios.post(process.env.NEXT_PUBLIC_BACKEND_URL+ "/edit", 
             {tok:tok, username:username, name:name, email:email, type:type, about:about, personalInfo:personalInfo, freelancerSites:freelancerSites, skills:skills, services:services, career:career, savedList:savedList, private:private, mailing:mailing},
             {headers: {'Authorization': tok}});
@@ -61,18 +61,18 @@ const EditProfileForm = () => {
     return (
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("username")} />
-            <input {...register("email")} />
-            <input {...register("type")} />
-            <input {...register("about")} />
-            <input {...register("personalInfo")} />
-            <input {...register("freelancerSites")} />
-            <input {...register("skills")} />
-            <input {...register("services")} />
-            <input {...register("career")} />
-            <input {...register("savedList")} />
-            <input {...register("private")} />
-            <input {...register("mailing")} />
+            <input {...register("username"), defaultValue = {username}}/>
+            <input {...register("email"), defaultValue = {email}} />
+            <input {...register("type"), defaultValue = {type}} /> 
+            <input {...register("about"), defaultValue = {about}} />
+            <input {...register("personalInfo"), defaultValue = {personalInfo}} />
+            <input {...register("freelancerSites"), defaultValue = {freelancerSites}} />
+            <input {...register("skills"), defaultValue = {skills}} />
+            <input {...register("services"), defaultValue = {services}} />
+            <input {...register("career"), defaultValue = {career}} />
+            <input {...register("savedList"), defaultValue = {savedList}} />
+            <input {...register("private"), defaultValue = {private}} />
+            <input {...register("mailing"), defaultValue = {mailing}} />
             <input type="submit" value="editProfile" />
           </form>
         </div>
