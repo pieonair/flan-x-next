@@ -41,8 +41,8 @@ const EditProfileForm = () => {
             if (!sessionStorage.getItem('tok'))
                 router.replace('/');
             //send request to get current details
-
-        }    }, []);
+            const data = await axios.get(process.env.NEXT_PUBLIC_BACKEND_URL);
+        }},[]);
 
         const onSubmit = async (data) => {
         try{
@@ -58,21 +58,33 @@ const EditProfileForm = () => {
         }
     }
 
-    return (
+    return ( // is error checking for valid username/password already being done automatically below? 
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("username"), defaultValue = {username}}/>
-            <input {...register("email"), defaultValue = {email}} />
+            <input type = "text" {...register("username"), defaultValue = {username}}/> 
+            {errors.username && errors.username.message}
+            <input type = "text" {...register("email"), defaultValue = {email}} />
+            {errors.email && errors.email.message}
             <input {...register("type"), defaultValue = {type}} /> 
-            <input {...register("about"), defaultValue = {about}} />
+            {errors.type && errors.username.type}
+            <input type = "text" {...register("about"), defaultValue = {about}} />
+            {errors.about && errors.username.about}
             <input {...register("personalInfo"), defaultValue = {personalInfo}} />
+            {errors.personalInfo && errors.personalInfo.message}
             <input {...register("freelancerSites"), defaultValue = {freelancerSites}} />
-            <input {...register("skills"), defaultValue = {skills}} />
+            {errors.freelancerSites && errors.freelancerSites.message}
+            <input type = "text"  {...register("skills"), defaultValue = {skills}} />
+            {errors.skills && errors.skills.message}
             <input {...register("services"), defaultValue = {services}} />
+            {errors.services && errors.services.message}
             <input {...register("career"), defaultValue = {career}} />
+            {errors.career && errors.career.message}
             <input {...register("savedList"), defaultValue = {savedList}} />
+            {errors.savedList && errors.savedList.message}
             <input {...register("private"), defaultValue = {private}} />
+            {errors.private && errors.private.message}
             <input {...register("mailing"), defaultValue = {mailing}} />
+            {errors.mailing && errors.mailing.message}
             <input type="submit" value="editProfile" />
           </form>
         </div>
