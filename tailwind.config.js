@@ -9,13 +9,13 @@ module.exports = {
         'button-blue': '#3FC0FC',
         'flan-purple': '#1B208D'
       }
-    },
-    fontFamily: {
-      'sans': ['"Visby CF'],
-      'serif': ['"Visby CF'],
-      'display': ['"Visby CF'],
-      'body': ['"Visby CF']
     }
+  //   fontFamily: {
+  //     'sans': ['"Visby CF'],
+  //     'serif': ['"Visby CF'],
+  //     'display': ['"Visby CF'],
+  //     'body': ['"Visby CF']
+  //   }
   },
   variants: {
     extend: {},
