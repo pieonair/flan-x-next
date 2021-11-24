@@ -17,12 +17,12 @@ const CategoryCard = ({picture, name}) => {
     //TODO add freelancers on top
     return(
         <div>
-                <Link href={`/category/${name}`}>
-                {/* <Image src={picture} alt={`A picture that represents the ${name} category`} height={500} width={500} /> */}
-                <div>    
-                    {name} 
-                </div>
-                </Link>
+            <Link href={`/category/${name}`}>
+            {/* <Image src={picture} alt={`A picture that represents the ${name} category`} height={500} width={500} /> */}
+            <div>    
+                {name} 
+            </div>
+            </Link>
         </div>
     );
 };
