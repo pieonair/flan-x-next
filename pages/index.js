@@ -6,9 +6,13 @@ import Header from '../components/Header';
 const Landing = () => {
     return(
         <>
+        <section className="w-full h-screen bg-mainOne bg-cover bg-center">
         <Header/>
         <MainSearch placeholder="search"/>
+        </section>
+        <div>
         <Categories /> 
+        </div>
         </>
     );
 };

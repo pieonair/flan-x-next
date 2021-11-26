@@ -8,14 +8,18 @@ module.exports = {
       colors: {
         'button-blue': '#3FC0FC',
         'flan-purple': '#1B208D'
-      }
+      },
+      backgroundImage: (theme) => ({
+        'mainOne': "url('~/styles/img/MainPage/HeroSection/HeroV1.jpg')",
+      })
+    },
+    fontFamily: {
+      sans: ["VisbyCFMedium"],
+      serif: ["VisbyCFMedium"],
+      mono: ["VisbyCFMedium"],
+      display: ["VisbyCFMedium"],
+      body: ["VisbyCFMedium"]
     }
-  //   fontFamily: {
-  //     'sans': ['"Visby CF'],
-  //     'serif': ['"Visby CF'],
-  //     'display': ['"Visby CF'],
-  //     'body': ['"Visby CF']
-  //   }
   },
   variants: {
     extend: {},

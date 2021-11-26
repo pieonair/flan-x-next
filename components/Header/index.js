@@ -22,7 +22,7 @@ const Header = () => {
             setAcc ( 
                 <div>
                     <Link href="/login">
-                        <a>Login</a> 
+                        <a className="font-VisbyCFMedium">Login</a> 
                     </Link>
                         | 
                     <Link href="/signup">

@@ -21,12 +21,32 @@ const LoginForm = () => {
     }
     
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("user")}/>
-                <input type="password" {...register("password")}/>
-                <input type="submit" value="log in"/>
-            </form> 
+        <div> 
+            {/* page */}
+            <div className="flex-1 flex flex-col">
+                <nav className="px-4 flex justify-between bg-flan-purple h-24">
+                    <ul className="flex items-center">
+                        <li className="h-auto w-auto">
+                            <nextimg className="h-full w-full mx-auto" src="../img/flan_logo.jpg" alt="flan logo"/>
+                        </li>
+                    </ul>
+                    <ul className="flex items-center">
+                        <li>
+                            <h2 className="font-VisbyCFMedium">Login</h2>
+                        </li>
+                        <li>
+                            <button className="h-12 w-32 text-white rounded-lg bg-button-blue">Create Account</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input {...register("user")}/>
+                    <input type="password" {...register("password")}/>
+                    <input type="submit" value="log in"/>
+                </form> 
+            </div>
         </div>
     )
 }
