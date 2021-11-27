@@ -32,16 +32,24 @@ const Header = () => {
             );
     }, []);
     return(
-       <div>
-        <Link href="/">
-            <a><Image id="logo" alt="Flan logo" src="/favicon.ico" width="50" height="50"></Image></a>
-        </Link>
-        <form>
-            <MainSearchBar/>
-        </form>
-        
-        {acc} 
-       </div>
+    <div className="flex-1 flex flex-col">
+        <nav className="px-4 flex justify-between bg-white h-20">
+            <ul className="flex items-center">
+                <li className="h-auto w-auto">
+                    <Link href="/">
+                    <a><div className="bg-logo h-11 w-12"></div></a>
+                    </Link>
+                </li>
+            </ul>
+ 
+            <form>
+                <MainSearchBar/>
+            </form>
+            
+            {acc} 
+
+        </nav>
+    </div>
     );
 
 };

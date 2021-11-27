@@ -27,7 +27,7 @@ const LoginForm = () => {
                 <nav className="px-4 flex justify-between bg-flan-purple h-24">
                     <ul className="flex items-center">
                         <li className="h-auto w-auto">
-                            <nextimg className="h-full w-full mx-auto" src="../img/flan_logo.jpg" alt="flan logo"/>
+                            <nextimg className="h-full w-full mx-auto" src="~/styles/img/flan_logo.jpg" alt="flan logo"/>
                         </li>
                     </ul>
                     <ul className="flex items-center">
