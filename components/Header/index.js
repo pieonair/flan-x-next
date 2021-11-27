@@ -20,15 +20,14 @@ const Header = () => {
     useEffect(()=>{
         if (sessionStorage.getItem('tok') === null)
             setAcc ( 
-                <div>
+                <ul className="flex items-center">
                     <Link href="/login">
-                        <a className="font-VisbyCFMedium">Login</a> 
-                    </Link>
-                        | 
+                        <h2 className="mr-4 text-flan-purple">Login</h2>
+                    </Link>| 
                     <Link href="/signup">
-                        <a>Sign Up</a>
+                        <button className="h-16 w-32 text-white rounded-lg bg-button-blue">Create Account</button>
                     </Link>
-                </div>
+                </ul>
             );
     }, []);
     return(

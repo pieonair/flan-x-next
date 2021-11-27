@@ -12,7 +12,7 @@ const login = ()=>{
     }, [])
     return(
         <div>
-            <Header/>
+            {/* <Header/> */}
             <LoginForm ></LoginForm>
         </div>
     )
