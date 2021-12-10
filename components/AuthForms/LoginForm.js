@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import axios from "axios";
-
+import Header from '/components/Header';
 
 const LoginForm = () => {
     const {
@@ -21,33 +21,26 @@ const LoginForm = () => {
     }
     
     return (
-        <div> 
-            {/* page */}
-            <div className="flex-1 flex flex-col">
-                <nav className="px-4 flex justify-between bg-flan-purple h-24">
-                    <ul className="flex items-center">
-                        <li className="h-auto w-auto">
-                            <nextimg className="h-full w-full mx-auto" src="~/styles/img/flan_logo.jpg" alt="flan logo"/>
-                        </li>
-                    </ul>
-                    <ul className="flex items-center">
-                        <li>
-                            <h2 className="font-VisbyCFMedium">Login</h2>
-                        </li>
-                        <li>
-                            <button className="h-12 w-32 text-white rounded-lg bg-button-blue">Create Account</button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
+        <>
+        <Header/>
+        <section className= "bg-loginPage w-screen h-screen"> 
+            <div className="pl-96 ml-96 pt-96">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("user")}/>
-                    <input type="password" {...register("password")}/>
-                    <input type="submit" value="log in"/>
+                    <input type="text" placeholder="Email / Username" {...register("user")}/>
+                    <input type="text" placeholder="Password" {...register("password")}/>
+                    <div className="flow-root">
+                    <input type="submit" className= "h-12 w-64 text-white rounded-lg bg-button-blue" value="Continue with Email"></input>
+                    </div>
+                    <div className="flow-root">
+                    <button className="text-button-blue">Forgot your password?</button>
+                    </div>
+                    <div className="flow-root">
+                    <button className="text-button-blue">Create Account</button>
+                    </div>
                 </form> 
             </div>
-        </div>
+        </section>
+        </>
     )
 }
 

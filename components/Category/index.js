@@ -3,28 +3,20 @@ import CategoryCard from './CategoryCard';
 const placeHolders = 
 [
     {
-        name: "Business",
-        picture:""
+        name: "Design & Art",
+        picture:"~/styles/img/Categories/Design_Art.jpg"
     },
     {
-        name: "Graphic Design",
-        picture: ""
+        name: "IT & Programming",
+        picture: "~/styles/img/Categories/IT_Programming.jpg"
     },
     {
-        name: "Digital Marketing",
-        picture: ""
+        name: "Sales & Marketing",
+        picture: "~/styles/img/Categories/Sales_Marketing.jpg"
     },   
     {
-        name: "Writing and Translation",
-        picture: ""
-    },
-    {
-        name: "Video & Animation",
-        picture: ""
-    },
-    {
-        name: "Music & Audio",
-        picture: ""
+        name: "Writing & Translation",
+        picture: "~/styles/img/Categories/Writing_Translation.jpg"
     },
 ];
 

@@ -58,24 +58,22 @@ const RegisterForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("name", {required: true})} />
-        {errors.name && errors.name.message}
-        <input {...register("username", {required: true})} />
-        {errors.username && errors.username.message}
-        <input {...register("email", {required: true})} />
+    <div className="flex h-screen">
+      <form className="m-auto pt-12" onSubmit={handleSubmit(onSubmit)}>
+        <input placeholder="Your Work Email"{...register("email", {required: true})} />
         {errors.email && errors.email.message}
-        <input type="password" {...register("password", {required: true})} />
-        {errors.password && errors.password.message}
-        <input type="password" {...register("confirmPassword", {required: true})} />
-        {errors.confirmPassword && errors.confirmPassword.message}
-        <input {...register("type", {required: true})}  type="radio" value="freelancer" />
-        <label htmlFor="freelancer">I am a freelancer</label>
-        <input {...register("type", {required: true})}  type="radio" value="client" />
-        <label htmlFor="client">I am a client</label>
-
-        <input type="submit" value="register" />
+        {/* <input type="password" {...register("password", {required: true})} />
+        {errors.password && errors.password.message} */}
+        <div className="flow-root">
+        <input type="submit" className="h-12 w-64 text-white rounded-lg bg-button-blue" value="Sign Up with Email" />
+        </div>
+        <div className="flow-root">
+        <p>By Joining I Agree to Receive Emails from Flan</p>
+        </div>
+        <div className="flow-root">
+        <p>Already Have an Account?</p>
+        <button className="text-button-blue">Log In</button>
+        </div>
       </form>
     </div>
   );
