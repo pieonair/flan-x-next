@@ -71,7 +71,9 @@ const RegisterForm = () => {
         <p>By Joining I Agree to Receive Emails from Flan</p>
         </div>
         <div className="flow-root">
-        <p>Already Have an Account?</p>
+        <button className="text-button-blue">Already Have an Account?</button>
+        </div>
+        <div className="flow-root">
         <button className="text-button-blue">Log In</button>
         </div>
       </form>
