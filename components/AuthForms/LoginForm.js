@@ -34,9 +34,7 @@ const LoginForm = () => {
             <input type="text" placeholder="Email / Username" {...register("user")}/>
             <input type="text" placeholder="Password" {...register("password")}/>
             <input type="submit" value="Continue with Email"></input>
-            <button className="text-button-blue">Forgot your password?</button>
             <input type="checkbox" {...register("save")}/>
-            <button className="text-button-blue">Create Account</button>
         </form> 
         </>
     )
