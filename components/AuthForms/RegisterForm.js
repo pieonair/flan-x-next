@@ -58,26 +58,15 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="flex h-screen">
+
       <form className="m-auto pt-12" onSubmit={handleSubmit(onSubmit)}>
         <input placeholder="Your Work Email"{...register("email", {required: true})} />
         {errors.email && errors.email.message}
         {/* <input type="password" {...register("password", {required: true})} />
         {errors.password && errors.password.message} */}
-        <div className="flow-root">
-        <input type="submit" className="h-12 w-64 text-white rounded-lg bg-button-blue" value="Sign Up with Email" />
-        </div>
-        <div className="flow-root">
+        <input type="submit" value="Sign Up with Email" />
         <p>By Joining I Agree to Receive Emails from Flan</p>
-        </div>
-        <div className="flow-root">
-        <button className="text-button-blue">Already Have an Account?</button>
-        </div>
-        <div className="flow-root">
-        <button className="text-button-blue">Log In</button>
-        </div>
       </form>
-    </div>
   );
 };
 

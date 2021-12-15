@@ -30,24 +30,14 @@ const LoginForm = () => {
     return (
         <>
         <Header/>
-        <section className= "bg-loginPage w-screen h-screen"> 
-            <div className="pl-96 ml-96 pt-96">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input type="text" placeholder="Email / Username" {...register("user")}/>
-                    <input type="text" placeholder="Password" {...register("password")}/>
-                    <div className="flow-root">
-                    <input type="submit" className= "h-12 w-64 text-white rounded-lg bg-button-blue" value="Continue with Email"></input>
-                    </div>
-                    <div className="flow-root">
-                    <button className="text-button-blue">Forgot your password?</button>
-                    </div>
-                    <div className="flow-root">
-                    <input type="checkbox" {...register("save")}/>
-                    <button className="text-button-blue">Create Account</button>
-                    </div>
-                </form> 
-            </div>
-        </section>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" placeholder="Email / Username" {...register("user")}/>
+            <input type="text" placeholder="Password" {...register("password")}/>
+            <input type="submit" value="Continue with Email"></input>
+            <button className="text-button-blue">Forgot your password?</button>
+            <input type="checkbox" {...register("save")}/>
+            <button className="text-button-blue">Create Account</button>
+        </form> 
         </>
     )
 }
