@@ -27,8 +27,8 @@ const MainSearchBar = ({placeholder}) => {
                 <div className="absolute top-4 left-3"> 
                     <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i> 
                 </div> 
-                <form className = "mr-32 mt-4" onSubmit={handleSubmit(onSubmit)}>
-                    <input type="text" className="border-2 border-blue-200 h-10 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none" placeholder="I am looking for..." {...register("search")}  />
+                <form className= "mr-32 mt-4" onSubmit={handleSubmit(onSubmit)}>
+                    <input className="border-2 border-blue-200 h-10 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none" placeholder="I am looking for..." {...register("search")}  />
                     <div className="ml-80 absolute top-2"> 
                         <button className="mt-2 h-10 w-24 text-white rounded-lg bg-button-blue">Search</button> 
                     </div>

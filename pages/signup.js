@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import RegisterForm from "../components/AuthForms/RegisterForm";
 import Header from "../components/Header";
-
-
+import LoginForm from "../components/AuthForms/LoginForm";
+import termsOfService from "../pages/termsOfService";
 
 const register = ()=>{
     const router = useRouter()
@@ -15,6 +15,8 @@ const register = ()=>{
         <div>
             <Header/>
             <RegisterForm ></RegisterForm>
+            By Joining, you agree to Flan's <termsOfService></termsOfService> and acknowledge that you have read the Privacy Policy.
+            Already Have an Account? <LoginForm></LoginForm>
         </div>
     )
 }
