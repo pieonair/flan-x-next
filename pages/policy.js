@@ -2,12 +2,12 @@ import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import Header from "../components/Header";
 
-const TermsOfService = () => {
+const Policy = () => {
     return (
         <div>
-            Terms of Services
+            policy
         </div>
     )
 };
 
-export default TermsOfService;
+export default Policy;

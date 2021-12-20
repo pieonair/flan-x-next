@@ -1,6 +1,7 @@
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Popup from 'reactjs-popup';
 
 const fields = {
     username: { type: String, required: 1 },

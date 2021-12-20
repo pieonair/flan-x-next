@@ -36,6 +36,7 @@ const FreelancerResult = ({freelancer}) => {
             <div className="FR-right">
                 <div>
                     Star
+                    {/* if click, save to favorites page */}
                 </div>
                 <div>
                     <a href={()=>"/"+freelancer.username}>Learn More</a>

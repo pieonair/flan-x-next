@@ -3,7 +3,9 @@ import { useEffect, useRef } from "react";
 import RegisterForm from "../components/AuthForms/RegisterForm";
 import Header from "../components/Header";
 import LoginForm from "../components/AuthForms/LoginForm";
-import termsOfService from "../pages/termsOfService";
+import TermsOfService from "../pages/termsOfService";
+import Policy from "../pages/policy";
+
 
 const register = ()=>{
     const router = useRouter()
@@ -15,7 +17,7 @@ const register = ()=>{
         <div>
             <Header/>
             <RegisterForm ></RegisterForm>
-            By Joining, you agree to Flan's <termsOfService></termsOfService> and acknowledge that you have read the Privacy Policy.
+            By Joining, you agree to Flan's <TermsOfService>Terms of Service</TermsOfService> and acknowledge that you have read the <Policy>Privacy Policy</Policy>.
             Already Have an Account? <LoginForm></LoginForm>
         </div>
     )
