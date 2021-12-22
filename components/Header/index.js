@@ -43,7 +43,7 @@ const Header = () => {
             </ul>
  
             <form>
-                <MainSearchBar/>
+                <MainSearchBar placeholder="Search for a freelancer"/>
             </form>
             
             {acc} 
