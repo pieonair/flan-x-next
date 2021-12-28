@@ -21,10 +21,12 @@ const Header = () => {
             setAcc(
                 <ul className="flex items-center">
                     <Link href="/login">
-                        <h2 className="mr-4 text-white">Login</h2>
+                        <button className="h-12 w-32 text-white rounded-lg bg-button-blue">
+                            Login
+                        </button>
                     </Link>
                     |
-                    <Link href="/signup">
+                    <Link href="/register">
                         <button className="h-12 w-32 text-white rounded-lg bg-button-blue">
                             Create Account
                         </button>

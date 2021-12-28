@@ -69,9 +69,7 @@ const RegisterForm = () => {
                 placeholder="Your Work Email"
                 {...register("email", { required: true })}
             />
-            {errors.email && errors.email.message}
-            {/* <input type="password" {...register("password", {required: true})} />
-        {errors.password && errors.password.message} */}
+            {errors.email && errors.email.message} 
             <input type="submit" value="Sign Up with Email" />
             <p>By Joining I Agree to Receive Emails from Flan</p>
         </form>
