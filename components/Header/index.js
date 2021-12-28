@@ -42,9 +42,9 @@ const Header = () => {
                 </li>
             </ul>
  
-            <form>
+            <div>
                 <MainSearchBar placeholder="Search for a freelancer"/>
-            </form>
+            </div>
             
             {acc} 
 

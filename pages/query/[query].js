@@ -33,7 +33,7 @@ export async function getStaticPaths() {
 }
 
 
-
+// checks if query has been run in last 10 secs -- if yes, gives info that has been returned already, otherwise, gives new information 
 export async function getStaticProps({ params }) {
     const {query} = params;
     const url = process.env.NEXT_PUBLIC_BACKEND_URL+"/query/"+query;
@@ -55,7 +55,6 @@ const Page = ({rawResults}) => {
         return <div>Loading...</div>
 
     const results = <FreelancerList freelancers = {rawResults}/>
-
 
     return(
         <div>

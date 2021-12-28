@@ -29,7 +29,6 @@ const LoginForm = () => {
     
     return (
         <>
-        <Header/>
         <form onSubmit={handleSubmit(onSubmit)}>
             <input type="text" placeholder="Email / Username" {...register("user")}/>
             <input type="text" placeholder="Password" {...register("password")}/>

@@ -7,7 +7,6 @@ const FreelancerList = ({freelancers}) => {
             return <FreelancerResult key={user.username} freelancer={user}/>;
         }
     );
-    console.log('what')
     return list;
 }
 
