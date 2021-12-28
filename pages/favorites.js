@@ -5,11 +5,11 @@ import Header from "../components/Header";
 const Favorites = () => {
     return (
         <div>
-            <Header/>
+            <Header />
             <div>Your Favorites</div>
             {/* add profiles from favorite list */}
         </div>
-    )
+    );
 };
 
 export default Favorites;

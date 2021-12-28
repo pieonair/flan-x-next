@@ -5,7 +5,7 @@ const bugSuccess = () => {
             <p>Thanks for your input!</p>
             <button>Close</button>
         </div>
-    )
+    );
 };
 
 export default bugSuccess;

@@ -3,11 +3,7 @@ import { useEffect, useRef } from "react";
 import Header from "../components/Header";
 
 const Policy = () => {
-    return (
-        <div>
-            policy
-        </div>
-    )
+    return <div>policy</div>;
 };
 
 export default Policy;

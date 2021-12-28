@@ -1,36 +1,31 @@
-import propTypes from 'prop-types';
-import Image from 'next/image';
+import propTypes from "prop-types";
+import Image from "next/image";
 
-const FreelancerResult = ({freelancer}) => {
-    return(
+const FreelancerResult = ({ freelancer }) => {
+    return (
         <div>
             <div className="FR-left">
                 {/* <Image alt="Freelancer profile picture" src={freelancer.personalInfo.profilePicture}/> */}
-                <div>
-                    {freelancer.personalInfo.location}
-                </div>
+                <div>{freelancer.personalInfo.location}</div>
                 <div className="FR-languages">
-                    {freelancer.personalInfo.languages.map((language)=><div key={language}>{language}</div>)}
+                    {freelancer.personalInfo.languages.map((language) => (
+                        <div key={language}>{language}</div>
+                    ))}
                 </div>
             </div>
             <div className="FR-middle">
                 <div>
-                    <div>
-                        {freelancer.name}
-                    </div>
+                    <div>{freelancer.name}</div>
                     <div>
                         Enlisted Websites {freelancer.freelancerSites.length}
                     </div>
                 </div>
+                <div>{freelancer.personalInfo.professionalTitle}</div>
+                <div>{freelancer.about}</div>
                 <div>
-                    {freelancer.personalInfo.professionalTitle}
-                </div>
-                <div>
-                    {freelancer.about}
-                </div>
-                <div>
-                    {freelancer.skills.map((skill)=><div key={skill}>{skill}</div>)}
-
+                    {freelancer.skills.map((skill) => (
+                        <div key={skill}>{skill}</div>
+                    ))}
                 </div>
             </div>
             <div className="FR-right">
@@ -39,16 +34,13 @@ const FreelancerResult = ({freelancer}) => {
                     {/* if click, save to favorites page */}
                 </div>
                 <div>
-                    <a href={()=>"/"+freelancer.username}>Learn More</a>
+                    <a href={() => "/" + freelancer.username}>Learn More</a>
                 </div>
-                <div>
-                    {freelancer.personalInfo.hourlyPay}
-                </div>
+                <div>{freelancer.personalInfo.hourlyPay}</div>
             </div>
         </div>
     );
 };
-
 
 FreelancerResult.propTypes = {
     freelancer: propTypes.shape({
@@ -65,7 +57,6 @@ FreelancerResult.propTypes = {
         about: propTypes.string.isRequired,
         username: propTypes.string.isRequired
     })
-
 };
 
 export default FreelancerResult;

@@ -1,15 +1,12 @@
 import FreelancerResult from "./FreelancerResult";
-import propTypes from 'prop-types';
+import propTypes from "prop-types";
 
-const FreelancerList = ({freelancers}) => {
-    const list = freelancers.map(
-        (user) => {
-            return <FreelancerResult key={user.username} freelancer={user}/>;
-        }
-    );
+const FreelancerList = ({ freelancers }) => {
+    const list = freelancers.map((user) => {
+        return <FreelancerResult key={user.username} freelancer={user} />;
+    });
     return list;
-}
-
+};
 
 FreelancerList.propTypes = {
     freelancers: propTypes.arrayOf(propTypes.object).isRequired
