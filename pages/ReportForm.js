@@ -46,7 +46,7 @@ const ReportForm = () => {
                     {...register("falseInformation")}
                 />
                 <label htmlFor="falseInformation">
-                    This user's profile/portfolio contains false information
+                    This user&apos;s profile/portfolio contains false information
                 </label>
                 <input
                     name="plagiarizedContent"
@@ -54,7 +54,7 @@ const ReportForm = () => {
                     {...register("plagiarizedContent")}
                 />
                 <label htmlFor="plagiarizedContent">
-                    This user's profile/portfolio contains plagiarized content
+                    This user&apos;s profile/portfolio contains plagiarized content
                 </label>
                 <input
                     name="doesNotBelong"
@@ -62,7 +62,7 @@ const ReportForm = () => {
                     {...register("doesNotBelong")}
                 />
                 <label htmlFor="doesNotBelong">
-                    This user's profile picture/portfolio image does not belong
+                    This user&apos;s profile picture/portfolio image does not belong
                     to this user
                 </label>
                 <input

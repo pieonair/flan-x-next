@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/router";
-import Popup from "reactjs-popup";
 
 const fields = {
     username: { type: String, required: 1 },
@@ -38,11 +37,12 @@ const EditProfileForm = () => {
     } = useForm();
     const router = useRouter();
     useEffect(() => {
-        async () => {
+        async () => {        
             if (!sessionStorage.getItem("tok")) router.replace("/");
             //send request to get current details
             const data = await axios.get(process.env.NEXT_PUBLIC_BACKEND_URL);
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const onSubmit = async (data) => {
