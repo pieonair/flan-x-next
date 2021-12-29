@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import Link from "next/link";
 import emailCheck from "../../utils/emailCheck";
 
@@ -20,20 +21,31 @@ const Register = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         clearErrors();
         const {email} = data;
         try{
-            if (emailCheck(email)) throw Error;
-            console.log(email);
+            if (emailCheck(email)){
+                setError(
+                    "email",
+                    {
+                        type: "manual",
+                        message: "Invalid email address"
+                    },
+                    { shouldFocus: true }
+                );
+                return;
+            } 
+            await axios.get(process.env.NEXT_PUBLIC_BACKEND_URL+"/check/email", {params: {email:email}});
             router.push({pathname: "/register/local", query: {email:email}},"/register/local");
         }
         catch(err){
+            const {type, message} = err.response.data;
             setError(
-                "email",
+                type,
                 {
                     type: "manual",
-                    message: "Invalid email address"
+                    message: message
                 },
                 { shouldFocus: true }
             );

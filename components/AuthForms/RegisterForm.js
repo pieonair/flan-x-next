@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const RegisterForm = () => {
+const RegisterForm = ({email}) => {
     const {
         register,
         handleSubmit,
@@ -17,11 +17,11 @@ const RegisterForm = () => {
             //clear any errors previously shown
             clearErrors();
             //get all the params the user should have inputted into variables
-            const { name, username, email, password, confirmPassword, type } =
+            const { name, username, password, confirmPassword, type } =
                 data;
             //send the data to the backend
             let response = await axios.post(
-                process.env.NEXT_PUBLIC_BACKEND_URL + "/signup",
+                process.env.NEXT_PUBLIC_BACKEND_URL + "/register",
                 {
                     username: username,
                     password: password,
@@ -65,11 +65,41 @@ const RegisterForm = () => {
 
     return (
         <form className="m-auto pt-12" onSubmit={handleSubmit(onSubmit)}>
-            <input
-                placeholder="Your Work Email"
-                {...register("email", { required: true })}
-            />
-            {errors.email && errors.email.message} 
+            <div>
+                Create your flan account
+            </div>
+            <div>
+                Email: {email}
+            </div>
+            <div>
+                <input
+                    placeholder="Name"
+                    {...register("name", { required: true })}
+                />
+                <div>{errors.name && errors.name.message }</div>
+                <small>Name cannot be changed</small>
+            </div>
+            <div>
+                <input
+                    placeholder="User ID"
+                    {...register("username", { required: true })}
+                />
+                <div>{errors.username && errors.username.message }</div>
+            </div>
+            <div>
+                <input
+                    placeholder="Password"  type="password"
+                    {...register("password", { required: true })}
+                />
+                <div>{errors.password && errors.password.message }</div>
+            </div>
+            <div>
+                <input
+                    placeholder="Confirm password" type="password"
+                    {...register("confirmPassword", { required: true })}
+                />
+                {errors.confirmPassword && errors.confirmPassword.message} 
+            </div>
             <input type="submit" value="Sign Up with Email" />
             <p>By Joining I Agree to Receive Emails from Flan</p>
         </form>

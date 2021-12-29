@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import {useEffect} from "react";
+import RegisterForm from "../../components/AuthForms/RegisterForm";
 
 const Local = () => {
     const router = useRouter();
@@ -10,9 +11,7 @@ const Local = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return(
-        <>
-        {email}
-        </>
+       <RegisterForm email={email}></RegisterForm> 
     )
 }
 
