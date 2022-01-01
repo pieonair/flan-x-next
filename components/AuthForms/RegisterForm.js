@@ -17,7 +17,7 @@ const RegisterForm = ({email}) => {
             //clear any errors previously shown
             clearErrors();
             //get all the params the user should have inputted into variables
-            const { name, username, password, confirmPassword, type } =
+            const { name, surname, username, password, confirmPassword, type } =
                 data;
             //send the data to the backend
             let response = await axios.post(
@@ -26,6 +26,7 @@ const RegisterForm = ({email}) => {
                     username: username,
                     password: password,
                     name: name,
+                    surname: surname,
                     email: email,
                     confirmPassword: confirmPassword,
                     type: type
@@ -77,11 +78,19 @@ const RegisterForm = ({email}) => {
                     {...register("name", { required: true })}
                 />
                 <div>{errors.name && errors.name.message }</div>
-                <small>Name cannot be changed</small>
+                <input
+                   placeholder="Surname"
+                    {...register("surname", { required: true })}
+                    />
+            </div>
+            <div>
+                <small>Name and Surname cannot be changed</small>
+                <div>{errors.name && errors.name.message}</div>
+                <div>{errors.surname && errors.surname.message}</div> 
             </div>
             <div>
                 <input
-                    placeholder="User ID"
+                    placeholder="Username"
                     {...register("username", { required: true })}
                 />
                 <div>{errors.username && errors.username.message }</div>

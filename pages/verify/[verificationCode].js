@@ -4,9 +4,10 @@ import { useEffect } from "react";
 import Header from "../../components/Header";
 import VerifyForm from "../../components/VerifyForm";
 
-const verifyFromCode = () => {
+const VerifyFromCode = () => {
     const router = useRouter();
     const { verificationCode } = router.query;
+
     useEffect(() => {
         async () => {
             if (sessionStorage.getItem("tok") !== null) {
@@ -37,4 +38,4 @@ const verifyFromCode = () => {
     );
 };
 
-export default verifyFromCode;
+export default VerifyFromCode;
